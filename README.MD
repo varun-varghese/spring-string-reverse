@@ -21,6 +21,11 @@ __REST endpoint__
 http://localhost:3000/reverse
 ```
 
+__Testing__
+```bash
+curl -X POST -H "Content-Type: application/json; charset=UTF-8" -d '{"Hello World!"}' localhost:3000/reverse
+```
+
 __Shutdown__
 ```bash
 curl -X POST localhost:3000/actuator/shutdown
