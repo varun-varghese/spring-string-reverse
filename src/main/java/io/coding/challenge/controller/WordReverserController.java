@@ -2,6 +2,7 @@ package io.coding.challenge.controller;
 
 import java.util.stream.Collectors;
 
+import javax.validation.ConstraintViolationException;
 import javax.validation.Valid;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotBlank;
@@ -42,14 +43,11 @@ public class WordReverserController {
 			headers = "Accept=application/json",
 			produces = "application/json")
 	@ResponseBody
-	ResponseEntity<String> reverse(@Valid @RequestBody @IsInputCorrect String input, Errors errors) {
+	ResponseEntity<String> reverse(@Valid @RequestBody @IsInputCorrect String input) throws WordReverserException {
 		log.debug("| Received {} for reversing", input);
-		if (errors.hasErrors()) {
-			String msg = errors.getAllErrors().stream()
-					.map(x -> x.getDefaultMessage())
-					.collect(Collectors.joining());
-            return ResponseEntity.badRequest().body(msg);
-        }
+		if (null == input || input.isEmpty()) {
+			throw new WordReverserException("Input string cannnot be null or empty");
+		}
 		return ResponseEntity.ok(wordReverserService.reverse(input));
 	}
 	
