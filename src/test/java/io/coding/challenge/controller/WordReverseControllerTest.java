@@ -25,11 +25,6 @@ public class WordReverseControllerTest {
 	@Autowired
 	private MockMvc mockMvc;
 	
-	@Before
-    public void setup(){
-		//
-	}
-	
 	@Test
 	public void basicTest() throws Exception {
 		this.mockMvc.perform(
