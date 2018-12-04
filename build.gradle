@@ -21,7 +21,7 @@ apply plugin: 'io.spring.dependency-management'
 apply plugin: 'com.palantir.docker'
 
 bootJar {
-    baseName = 'wd-von-gonten'
+    baseName = 'springboot-string-reverse'
     version =  '0.0.1'
 }
 
