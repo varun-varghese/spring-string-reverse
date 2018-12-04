@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>io.coding.challenge</groupId>
-	<artifactId>wd-von-gonten</artifactId>
+	<artifactId>springboot-string-reverse</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
